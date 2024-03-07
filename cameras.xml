@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<storage>
+    <ipcam name="Limelight 2" url="http://limelight2.local:1182/stream.mjpg" />
+</storage>
