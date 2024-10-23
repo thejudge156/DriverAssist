@@ -1,0 +1,31 @@
+name: Build Driver Assist
+
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Setup GraalVM
+      uses: graalvm/setup-graalvm@v1
+      with:
+        java-version: '23'
+        distribution: 'graalvm'
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        native-image-job-reports: 'true'
+    - name: Set up swap space
+      if: runner.os == 'Linux'
+      uses: pierotofy/set-swap-space@v1.0
+      with:
+        swap-size-gb: 10
+    - name: Setup Build Deps
+      run: "sudo apt install zip; link $JAVA_HOME/bin/java $JAVA_HOME/bin/javaw"
+    - name: Native Compile
+      run: "mvn nativeCompile"
+    - name: Zip Release
+      run: "cd ${{ github.workspace }}; zip DriverAssist.zip -r build/native" 
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        name: 1.20.4
+        path: ${{ github.workspace }}/DriverAssist.zip
