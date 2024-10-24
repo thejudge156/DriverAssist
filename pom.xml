@@ -70,6 +70,7 @@
                                 <buildArg>-Djava.awt.headless=false</buildArg>
                                 <buildArg>-H:ConfigurationFileDirectories=conf-dir</buildArg>
                                 <buildArg>--initialize-at-build-time=org.xml.sax.helpers.DefaultHandler</buildArg>
+                                <buildArg>--initialize-at-build-time=org.xml.sax.helpers.LocatorImpl</buildArg>
                                 <buildArg>-H:IncludeLocales=en</buildArg>
                                 <buildArg>--enable-http</buildArg>
                                 <buildArg>--enable-https</buildArg>
