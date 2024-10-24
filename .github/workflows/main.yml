@@ -26,4 +26,4 @@ jobs:
       uses: actions/upload-artifact@v4.3.1
       with:
         name: DriverAssist
-        path: ${{ github.workspace }}/DriverAssist/target
+        path: ${{ github.workspace }}/target/
