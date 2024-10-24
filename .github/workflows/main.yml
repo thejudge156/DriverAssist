@@ -18,6 +18,8 @@ jobs:
       uses: pierotofy/set-swap-space@v1.0
       with:
         swap-size-gb: 10
+    - name: Checkout
+      uses: actions/checkout@v4
     - name: Native Compile
       run: "mvn nativeCompile"
     - name: Upload Artifact
