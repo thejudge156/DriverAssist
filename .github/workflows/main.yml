@@ -21,9 +21,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Native Compile
-      run: "mvn nativeCompile"
+      run: "mvn -Pnative build"
     - name: Upload Artifact
       uses: actions/upload-artifact@v4.3.1
       with:
-        name: 1.20.4
+        name: DriverAssist
         path: ${{ github.workspace }}/build/native
