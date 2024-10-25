@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <storage>
-    <ipcam name="Limelight 2" url="http://10.87.68.2:1181/stream.mjpg" />
+    <ipcam name="RoboRIO" url="http://10.87.68.2:1181/stream.mjpg" />
 </storage>
